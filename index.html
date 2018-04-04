@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="styles.css"/>
+    
+    <title>Sessional marks</title>
+</head>
+<body>
+
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+      <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 font-weight-normal">Sessional marks</h1>
+        <p class="lead font-weight-normal">Here you can enter and view details about a sessional marks</p>
+      </div>
+      <div class="product-device box-shadow d-none d-md-block"></div>
+      <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+    </div>
+        <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+      <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+        <div class="my-3 py-3">
+          <h2 class="display-5">Add data</h2>
+          <p class="lead">Click here to insert data to the database</p>
+        </div>
+        <div class="bg-light box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;margin:0 auto;">
+            <button class="btn btn-lg btn-outline-dark" style="position:relative;top:50%;" data-toggle="modal" data-target="#add_db">Click here</button>  
+        </div>
+      </div>
+      <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+          <h2 class="display-5">Compute</h2>
+          <p class="lead">Click here to see the sessional marks subject wise</p>
+        </div>
+        <div class="bg-dark box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+            <button class="btn btn-lg btn-outline-light" style="position:relative;top:50%;" data-toggle="modal" data-target="#retrive_db">Click here</button>  
+        </div>
+      </div>
+    </div>
+    
+<div class="modal fade" id="add_db" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add to db</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+          <form method="post" action="add_db.php">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Roll No</label>
+                <input type="number" class="form-control" name="rollno" aria-describedby="emailHelp" placeholder="Enter Roll Number" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Select Subject</label>
+                <select class="form-control" name="code">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Mark of Subject</label>
+                <div class="row" style="margin-left:15px">
+                <input type="number" class="col-md-3 form-control" name="series1" placeholder="Series1/40" required>
+                <input type="number" class="col-md-3 offset-md-1 form-control" name="series2" placeholder="Series2/40" required>
+                <input type="number" class="col-md-3 offset-md-1 form-control" name="assign" placeholder="Project/10" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-secondary" style="float:right" data-dismiss="modal">Close</button>
+          </form>
+          
+          
+      </div>
+    </div>
+  </div>
+</div>
+    
+<div class="modal fade" id="retrive_db" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Retrive data</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+          <form method="post" action="retrive_db.php">
+              <h5>Select RollNo:</h5>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Select Subject</label>
+                <select class="form-control" name="option">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+            </div>
+              
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-secondary" style="float:right" data-dismiss="modal">Close</button>
+          </form>
+          
+          
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
